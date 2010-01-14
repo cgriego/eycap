@@ -67,7 +67,7 @@ module Capistrano
         puts "Executing Post Processing Hooks"
         hooks.each do |h|
           @_post_process_hooks[h].each do |key|
-            @_configuration.parent.find_and_execute_task(key)
+            @_configuration.top.find_and_execute_task(key)
           end
         end
         puts "Finished Post Processing Hooks"
